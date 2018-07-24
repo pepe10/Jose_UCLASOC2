@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+    img {
+      width: 50%;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+         }
+      li {
+       float: left;
+        }
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+           }
+
+      li a:hover {
+        background-color: #111;
+                 }
+
+      .active {
+        background-color: #4CAF50;
+              }
+      body{
+          background-color:#A9CCE3;
+          color:000000;
+          font-family:Arial;
+          }
+      h1{
+        text-align:center;
+        }
+      img{
+        height:30%;
+        width:500px;
+        border:Ipx solid black;
+         }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="animals.html">Animals</a></li>
+      <li><a href="birthday.html">Birthday</a></li>
+      <li><a href="cars.html">Cars</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a class="active" href="photos.html">Photos</a></li>
+    </ul>
+    <h1>Click on the photo to see a random image</h1>
+    <img src="http://barbara-5.info/wp-content/uploads/2016-04-23_10-45-21-300x200.jpg" alt='image' id="changeablePic" onClick="change();">
+
+    <script type="text/javascript">
+      var photos = [
+      "https://qph.fs.quoracdn.net/main-qimg-5eaa744c271a79199bef66a88b511e4a-c",
+      "http://cdn0.wideopenpets.com/wp-content/uploads/2017/03/AdobeStock_84450910-770x405.jpg",
+      "http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/istock-515714114_0.jpg?itok=r3SQu9lc",
+      "http://www.pebble.tv/wp-content/uploads/2014/04/dolphin.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAyM7LluuMkvtBAnUXpPSflsY_p5UstsErZF7v1atp5jn4UjPf",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwWbTTE1KGrQkZqkGkEuPNaU4e9qansJkA_egZSX-ipmekdF3l",
+      "https://defenders.org/sites/default/files/styles/large/public/tiger-dirk-freder-isp.jpg",
+      "https://www.wildrepublic.com/Content/uploads/mountain-goat-2a-2108-xl.jpg",
+      "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/R5WCqjT/videoblocks-narwhal-whales-swimming-in-the-arctic-high-quality-3d-animation_hrdqfbn5g_thumbnail-full14.png",
+      "https://upload.wikimedia.org/wikipedia/commons/1/11/Cheetah_Kruger.jpg"]
+
+      function change() {
+        var image = document.getElementById('changeablePic');
+        var randindex = getRandomInt(0, 10)
+        image.src = photos[randindex]
+      }
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+        //The maximum is exclusive and the minimum is inclusive
+      }
+    </script>
+  </body>
+</html>
